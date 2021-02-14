@@ -43,10 +43,8 @@ namespace FolderSyncer
         private void CoreWindow_Loaded(object sender, RoutedEventArgs e)
         {
             foreach (var str in File.ReadAllText("settings.ini").Trim().Split("\n"))
-            {
                 if (str != "")
                     ModelViews.MainViewModel.Folders.Add(new FolderToSync(str.Split('|')[0], str.Split('|')[1]));
-            }
         }
     }
 }

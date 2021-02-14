@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FolderSyncer" xmlns:modelviews="clr-namespace:FolderSyncer.ModelViews"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="600" Name="CoreWindow" Closing="CoreWindow_Closing" Loaded="CoreWindow_Loaded"
+        Title="MainWindow" Height="450" Width="650" Name="CoreWindow" Closing="CoreWindow_Closing" Loaded="CoreWindow_Loaded"
         xmlns:ui="http://schemas.modernwpf.com/2019"
         ui:WindowHelper.UseModernWindowStyle="True" >
     <Window.DataContext >

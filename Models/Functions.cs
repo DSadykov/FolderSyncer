@@ -48,17 +48,15 @@ namespace FolderSyncer.Models
                     filename = file.Substring(PathFrom.Length, file.Length - PathFrom.Length);
                     Sync(filename, CheckForChanges(filename));
                 }
-                //foreach (string file in Directory.GetFiles(PathTo, "*", SearchOption.AllDirectories))
-                //{
-                //    filename = file.Substring(PathTo.Length, file.Length - PathTo.Length);
-                //    if (!File.Exists(PathFrom + filename) && File.Exists(PathTo + filename))
-                //    {
-                //        File.Delete(PathTo + filename);
-                        
-                //    }
-                //}
+                foreach (string file in Directory.GetFiles(PathTo, "*", SearchOption.AllDirectories))
+                {
+                    filename = file.Substring(PathTo.Length, file.Length - PathTo.Length);
+                    if (!File.Exists(PathFrom + filename) && File.Exists(PathTo + filename)&&!filename.Contains(".deleted"))
+                        File.Move(PathTo + filename, PathTo + filename + ".deleted");
+                }
                 Thread.Sleep(1000);
             }
+            
         }
         private void Sync(string filename, states type)
         {
