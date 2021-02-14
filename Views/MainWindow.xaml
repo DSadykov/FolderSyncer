@@ -1,0 +1,27 @@
+﻿<Window x:Class="FolderSyncer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FolderSyncer" xmlns:modelviews="clr-namespace:FolderSyncer.ModelViews"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="600" Name="CoreWindow" Closing="CoreWindow_Closing" Loaded="CoreWindow_Loaded"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        ui:WindowHelper.UseModernWindowStyle="True" >
+    <Window.DataContext >
+        <modelviews:MainViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <DataGrid Name="Folders" CanUserAddRows="False" AutoGenerateColumns="False" Grid.Row="0" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="From" Width="300" Binding="{Binding PathFrom}"/>
+                <DataGridTextColumn Header="To" Width="300" Binding="{Binding PathTo}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="Add" Content="Add" VerticalAlignment="Stretch"  Command="{Binding Path=AddCommand}" HorizontalAlignment="Stretch" Grid.Row="1"/>
+    </Grid>
+</Window>
