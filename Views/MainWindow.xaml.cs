@@ -35,16 +35,18 @@ namespace FolderSyncer
             string _folders = "";
             foreach (var tmp in ModelViews.MainViewModel.Folders)
             {
-                _folders += tmp.PathFrom + "|" + tmp.PathTo + "\n";
+                _folders += tmp.PathFrom + "|" + tmp.PathTo + "|" + tmp.LastUpdate + "\n";
             }
             File.WriteAllText("settings.ini", _folders);
         }
 
         private void CoreWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            foreach (var str in File.ReadAllText("settings.ini").Trim().Split("\n"))
-                if (str != "")
-                    ModelViews.MainViewModel.Folders.Add(new FolderToSync(str.Split('|')[0], str.Split('|')[1]));
+            if (File.Exists("settings.ini"))
+                foreach (var str in File.ReadAllText("settings.ini").Trim().Split("\n"))
+                    if (str != "")
+                        ModelViews.MainViewModel.Folders.Add
+                            (new FolderToSync(str.Split('|')[0], str.Split('|')[1], str.Split('|')[2]));
         }
     }
 }

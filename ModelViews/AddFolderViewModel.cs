@@ -116,7 +116,7 @@ namespace FolderSyncer.ModelViews
             string _folders = "";
             foreach (var tmp in ModelViews.MainViewModel.Folders)
             {
-                _folders += tmp.PathFrom + ":" + tmp.PathTo + "\n";
+                _folders += tmp.PathFrom + "|" + tmp.PathTo +"|"+tmp.LastUpdate+ "\n";
             }
             File.WriteAllText("settings.ini", _folders);
         }

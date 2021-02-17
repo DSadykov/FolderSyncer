@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FolderSyncer" xmlns:modelviews="clr-namespace:FolderSyncer.ModelViews"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="650" Name="CoreWindow" Closing="CoreWindow_Closing" Loaded="CoreWindow_Loaded"
+        Title="MainWindow" Height="450" Width="750" Name="CoreWindow" Closing="CoreWindow_Closing" Loaded="CoreWindow_Loaded"
         xmlns:ui="http://schemas.modernwpf.com/2019"
         ui:WindowHelper.UseModernWindowStyle="True" >
     <Window.DataContext >
@@ -18,8 +18,9 @@
         </Grid.RowDefinitions>
         <DataGrid Name="Folders" CanUserAddRows="False" AutoGenerateColumns="False" Grid.Row="0" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="From" Width="300" Binding="{Binding PathFrom}"/>
-                <DataGridTextColumn Header="To" Width="300" Binding="{Binding PathTo}"/>
+                <DataGridTextColumn Header="From" Width="250" Binding="{Binding PathFrom}"/>
+                <DataGridTextColumn Header="To" Width="250" Binding="{Binding PathTo}"/>
+                <DataGridTextColumn Header="Last update" Width="200" Binding="{Binding LastUpdate}"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="Add" Content="Add" VerticalAlignment="Stretch"  Command="{Binding Path=AddCommand}" HorizontalAlignment="Stretch" Grid.Row="1"/>
