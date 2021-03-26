@@ -25,6 +25,10 @@ namespace FolderSyncer.Models
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+        ~FolderToSync()
+        {
+            StopSyncing();
+        }
         public bool Flag
         {
             get { return flag; }

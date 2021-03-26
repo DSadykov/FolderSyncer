@@ -26,7 +26,7 @@ namespace FolderSyncer
         public MainWindow()
         {
             InitializeComponent();
-            Folders.ItemsSource = ModelViews.MainViewModel.Folders;
+            Folders_DG.ItemsSource = ModelViews.MainViewModel.Folders;
             ThemeManager.Current.ApplicationTheme = ApplicationTheme.Light;
         }
 
