@@ -79,6 +79,7 @@ namespace FolderSyncer.Models
             while (flag)
             {
                 string filename;
+                
                 if (Directory.Exists(PathTo) && Directory.Exists(PathFrom))
                 {
                     foreach (string file in Directory.GetFiles(PathFrom, "*", SearchOption.AllDirectories))
@@ -112,31 +113,38 @@ namespace FolderSyncer.Models
         }
         private void Sync(string filename, states type)
         {
-            switch (type)
+            try
             {
-                case states.noex:
-                    {
-                        File.Copy(PathFrom + filename, PathTo + filename, true);
-                        LastUpdate = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString();
-                        break;
-                    }
-                case states.noexsub:
-                    {
-                        if (!Directory.Exists(Path.GetDirectoryName(PathTo + filename)))
-                            Directory.CreateDirectory(Path.GetDirectoryName(PathTo + filename));
-                        LastUpdate = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString();
-                        File.Copy(PathFrom + filename, PathTo + filename, true);
-                        break;
-                    }
-                case states.older:
-                    {
+                switch (type)
+                {
+                    case states.noex:
+                        {
+                            File.Copy(PathFrom + filename, PathTo + filename, true);
+                            LastUpdate = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString();
+                            break;
+                        }
+                    case states.noexsub:
+                        {
+                            if (!Directory.Exists(Path.GetDirectoryName(PathTo + filename)))
+                                Directory.CreateDirectory(Path.GetDirectoryName(PathTo + filename));
+                            LastUpdate = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString();
+                            File.Copy(PathFrom + filename, PathTo + filename, true);
+                            break;
+                        }
+                    case states.older:
+                        {
 
-                        File.Copy(PathFrom + filename, PathTo + filename, true);
-                        LastUpdate = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString();
+                            File.Copy(PathFrom + filename, PathTo + filename, true);
+                            LastUpdate = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString();
+                            break;
+                        }
+                    case states.newer:
                         break;
-                    }
-                case states.newer:
-                    break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " occured at " + filename, "Error");
             }
         }
 
