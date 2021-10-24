@@ -1,14 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "0OF0b0xqTAEbfcEkJjKwDo9joM1wZQoyx44+Gg1eUIIfDo6vJtnDh4bfwZda3sCJ2WRKBo0ExlFtsyve7SVb5Q==",
+  "dgSpecHash": "XFc1kWSCQRYZJkjnMcDezt8nGW/gFFOmynpXvqLLWbi9Y3FC+UnMO6TEDSRoxwwals5TfxQu00ZmQXlk17JtsQ==",
   "success": true,
-  "projectFilePath": "E:\\OneDrive\\!VisStud\\C#\\FolderSyncer\\FolderSyncer.csproj",
+  "projectFilePath": "e:\\OneDrive\\!VisStud\\C#\\FolderSyncer\\FolderSyncer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dsady\\.nuget\\packages\\microsoft.netcore.platforms\\3.0.0\\microsoft.netcore.platforms.3.0.0.nupkg.sha512",
     "C:\\Users\\dsady\\.nuget\\packages\\microsoft.windows.sdk.contracts\\10.0.18362.2005\\microsoft.windows.sdk.contracts.10.0.18362.2005.nupkg.sha512",
     "C:\\Users\\dsady\\.nuget\\packages\\modernwpfui\\0.9.3\\modernwpfui.0.9.3.nupkg.sha512",
     "C:\\Users\\dsady\\.nuget\\packages\\system.runtime.windowsruntime\\4.6.0\\system.runtime.windowsruntime.4.6.0.nupkg.sha512",
-    "C:\\Users\\dsady\\.nuget\\packages\\system.runtime.windowsruntime.ui.xaml\\4.6.0\\system.runtime.windowsruntime.ui.xaml.4.6.0.nupkg.sha512"
+    "C:\\Users\\dsady\\.nuget\\packages\\system.runtime.windowsruntime.ui.xaml\\4.6.0\\system.runtime.windowsruntime.ui.xaml.4.6.0.nupkg.sha512",
+    "C:\\Users\\dsady\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.17\\microsoft.netcore.app.host.win-x64.3.1.17.nupkg.sha512",
+    "C:\\Users\\dsady\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\dsady\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\dsady\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
   ],
   "logs": []
 }
